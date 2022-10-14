@@ -4,8 +4,6 @@ import XCTest
 
 final class VersionTests: XCTestCase {
     func test1_throwInitializationErrors() {
-        XCTAssertTrue((try! Version("2.0.0-alpha")) > (try! Version("1.0.0")))
-
         assertInitializingErrorEqual(to: .invalidCoreFormat(""), for: "")
         assertInitializingErrorEqual(to: .invalidCoreFormat(""), for: "-123")
         assertInitializingErrorEqual(to: .invalidCoreFormat(""), for: "+ABC")
@@ -90,7 +88,8 @@ private func makeComparisonAscendingChain() -> [String] {
         "1.0.0-beta.2",
         "1.0.0-beta.11",
         "1.0.0-rc.1",
-        "1.0.0"
+        "1.0.0",
+        "2.0.0-alpha"
     ]
 }
 
