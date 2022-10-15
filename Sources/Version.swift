@@ -107,7 +107,7 @@ private enum MetadataIdentifier: CustomStringConvertible, Comparable {
         case .string(let stringIdentifier):
             guard let regex = try? Regex<Substring>("[A-Za-z0-9-]+") else { return false }
 
-            let matches = description.matches(of: regex)
+            let matches = stringIdentifier.matches(of: regex)
 
             guard
                 let firstMatch = matches.first,
