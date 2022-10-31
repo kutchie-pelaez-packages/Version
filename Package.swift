@@ -4,9 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "Version",
-    platforms: [
-        .iOS(.v16)
-    ],
+    platforms: [.iOS(.v16)],
     products: [
         .library(name: "Version", targets: ["Version"])
     ],
