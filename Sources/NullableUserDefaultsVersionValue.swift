@@ -1,7 +1,7 @@
 import CoreUtils
 
-@propertyWrapper public struct NullableVersionUserDefault {
-    @UserDefault private var versionDescription: String?
+@propertyWrapper public struct NullableUserDefaultsVersionValue {
+    @UserDefaultsValue private var versionDescription: String?
 
     public var wrappedValue: Version? {
         get {
@@ -13,6 +13,6 @@ import CoreUtils
     }
 
     public init(domain: String, name: String) {
-        self._versionDescription = UserDefault(domain: domain, name: name)
+        self._versionDescription = UserDefaultsValue(domain: domain, name: name)
     }
 }

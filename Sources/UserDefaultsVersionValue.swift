@@ -1,7 +1,7 @@
 import CoreUtils
 
-@propertyWrapper public struct VersionUserDefault {
-    @UserDefault private var versionDescription: String?
+@propertyWrapper public struct UserDefaultsVersionValue {
+    @UserDefaultsValue private var versionDescription: String?
     private let defaultValue: Version
 
     public var wrappedValue: Version {
@@ -19,7 +19,7 @@ import CoreUtils
     }
 
     public init(domain: String, name: String, defaultValue: Version) {
-        self._versionDescription = UserDefault(domain: domain, name: name)
+        self._versionDescription = UserDefaultsValue(domain: domain, name: name)
         self.defaultValue = defaultValue
     }
 
